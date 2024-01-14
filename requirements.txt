@@ -1,0 +1,11 @@
+matplotlib==3.5.3
+numpy==1.21.6
+numpy==1.21.0
+phe==1.5.0
+Pyfhel==3.3.0
+Pyfhel==3.4.2
+Pyfhel_CKKS==3.0.3
+tenseal==0.3.4
+termcolor==1.1.0
+torch==1.13.1
+torchvision==0.14.1

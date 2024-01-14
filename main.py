@@ -74,11 +74,14 @@ def create_client_server():
     for i in range(args.num_users):
         new_idxs = set(np.random.choice(all_idxs, num_items, replace=False))
         all_idxs = list(set(all_idxs) - new_idxs)
+        if args.mode == "Plain":
+            new_client = Client(args=args, dataset=dataset_train, idxs=new_idxs, w=copy.deepcopy(net_glob.state_dict()))
         if args.mode == "CKKS":
             new_client = Client(args=args, dataset=dataset_train, idxs=new_idxs, w=copy.deepcopy(net_glob.state_dict()), FHE=HE)
         elif args.mode == "Paillier":
             new_client = Client(args=args, dataset=dataset_train, idxs=new_idxs, w=copy.deepcopy(net_glob.state_dict()), PhePk=phe_pk, PheSk=phe_sk)
         clients.append(new_client)
+        
 
     server = Server(args=args, w=copy.deepcopy(net_glob.state_dict()))
     return clients, server
