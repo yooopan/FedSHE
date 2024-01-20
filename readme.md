@@ -8,11 +8,20 @@ pip3 install -r requirements.txt
 # 2. Train on MNIST
 
 ## 2.1 Plain Mode
+
+with LetNet:
 ```
-python3 main.py --gpu -1 --dataset mnist --num_channels 1  --epochs 10 --local_ep 10 --lr 0.015 --momentum 0.9 --mode Plain
+python3 main.py --gpu -1 --dataset mnist --model LeNet --num_channels 1  --epochs 10 --local_ep 10 --lr 0.015 --momentum 0.9 --mode Plain
 ```
 
+with AlexNet:
+```
+python3 main.py --gpu -1 --dataset mnist --model AlexNet --num_channels 1  --epochs 10 --local_ep 10 --lr 0.015 --momentum 0.9 --mode Plain
+```
+
+
 ## 2.2 Encrypt with Paillier
+
 ```
 python3 main.py --gpu -1 --dataset mnist --num_channels 1  --epochs 10 --local_ep 10 --lr 0.015 --momentum 0.9 --mode Paillier --phe_key_len 128
 
@@ -25,6 +34,7 @@ python3 main.py --gpu -1 --dataset mnist --num_channels 1  --epochs 10 --local_e
 ## 2.2 Encrypt with CKKS
 
 ### with different poly_modulus_degree
+
 ```
 python3 main.py --gpu -1 --dataset mnist --num_channels 1  --epochs 10 --local_ep 10 --lr 0.015 --momentum 0.9 --mode CKKS --ckks_sec_level 128 --ckks_mul_depth 0 --ckks_key_len 1024
 python3 main.py --gpu -1 --dataset mnist --num_channels 1  --epochs 10 --local_ep 10 --lr 0.015 --momentum 0.9 --mode CKKS --ckks_sec_level 128 --ckks_mul_depth 0 --ckks_key_len 2048
@@ -34,6 +44,7 @@ python3 main.py --gpu -1 --dataset mnist --num_channels 1  --epochs 10 --local_e
 ```
 
 ### with different  multiplication depth
+
 ```
 python3 main.py --gpu -1 --dataset mnist --num_channels 1  --epochs 10 --local_ep 10 --lr 0.015 --momentum 0.9--mode CKKS --ckks_sec_level 128 --ckks_mul_depth 0 --ckks_key_len 1024
 python3 main.py --gpu -1 --dataset mnist --num_channels 1  --epochs 10 --local_ep 10 --lr 0.015 --momentum 0.9--mode CKKS --ckks_sec_level 128 --ckks_mul_depth 0 --ckks_key_len 2048
@@ -42,6 +53,7 @@ python3 main.py --gpu -1 --dataset mnist --num_channels 1  --epochs 10 --local_e
 ```
 
 ### with different security level
+
 ```
 python3 main.py --gpu -1 --dataset mnist --num_channels 1  --epochs 10 --local_ep 10 --lr 0.015 --momentum 0.9 --mode CKKS --ckks_sec_level 128 --ckks_mul_depth 0 --ckks_key_len 2048
 python3 main.py --gpu -1 --dataset mnist --num_channels 1  --epochs 10 --local_ep 10 --lr 0.015 --momentum 0.9 --mode CKKS --ckks_sec_level 192 --ckks_mul_depth 0 --ckks_key_len 2048
@@ -62,6 +74,7 @@ with AlexNet:
 ```
 python3 main.py --gpu -1 --dataset mnist --model AlexNet --num_channels 1  --epochs 10 --local_ep 10 --lr 0.015 --momentum 0.9 --mode Plain
 ```
+
 ## 3.2 Encrypt with Paillier
 
 ```
@@ -78,6 +91,7 @@ python3 main.py --gpu -1 --dataset mnist --model LeNet --num_channels 1  --epoch
 ## 3.2 Encrypt with CKKS
 
 ### with different poly_modulus_degree
+
 ```
 python3 main.py --gpu -1 --dataset cifar --model LeNet --num_channels 1  --epochs 10 --local_ep 10 --lr 0.015 --momentum 0.9 --mode CKKS --ckks_sec_level 128 --ckks_mul_depth 0 --ckks_key_len 1024
 
@@ -88,6 +102,7 @@ python3 main.py --gpu -1 --dataset cifar --model LeNet --num_channels 1  --epoch
 ```
 
 ### with different  multiplication depth
+
 ```
 python3 main.py --gpu -1 --dataset cifar --model LeNet --num_channels 1  --epochs 10 --local_ep 10 --lr 0.015 --momentum 0.9 --mode CKKS --ckks_sec_level 128 --ckks_mul_depth 0 --ckks_key_len 1024
 
@@ -98,6 +113,7 @@ python3 main.py --gpu -1 --dataset cifar --model LeNet --num_channels 1  --epoch
 ```
 
 ### with different security level
+
 ```
 python3 main.py --gpu -1 --dataset cifar --model LeNet --num_channels 1  --epochs 10 --local_ep 10 --lr 0.015 --momentum 0.9 --mode CKKS --ckks_sec_level 128 --ckks_mul_depth 0 --ckks_key_len 2048
 python3 main.py --gpu -1 --dataset cifar --model LeNet --num_channels 1  --epochs 10 --local_ep 10 --lr 0.015 --momentum 0.9 --mode CKKS --ckks_sec_level 192 --ckks_mul_depth 0 --ckks_key_len 2048
