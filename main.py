@@ -63,8 +63,6 @@ def create_client_server():
             net_glob = LeNetMnist(args=args).to(args.device)
         elif args.model == "AlexNet":
             net_glob = AlexNetMnist(args=args).to(args.device)
-        elif args.model == "CNN":
-            net_glob = CNNMnist(args=args).to(args.device)
     elif args.dataset == "cifar":
         if args.model == "LeNet":
             net_glob = LeNetCifar(args=args).to(args.device)
