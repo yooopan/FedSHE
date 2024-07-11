@@ -47,8 +47,6 @@ class Client():
                 self.model = LeNetMnist(args=args).to(args.device)
             elif args.model == "AlexNet":
                 self.model = AlexNetMnist(args=args).to(args.device)
-            elif args.model == "CNN":
-                self.model = CNNMnist(args=args).to(args.device)
         elif args.dataset == "cifar":
             if args.model == "LeNet":
                 self.model = LeNetCifar(args=args).to(args.device)
